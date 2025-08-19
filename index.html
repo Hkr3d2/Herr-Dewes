@@ -72,5 +72,24 @@
         }
     </style>
   </head>
-  <button class="button" id:soundButton>Das beste Knopf der Welt</button>
+  <button class="button" id="soundButton">Das beste Knopf der Welt</button>
+      <audio id="soundEffect" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
+        Ihr Browser unterstützt kein Audio.
+    </audio>
+    <script>
+        const button = document.getElementById('soundButton');
+        const sound = document.getElementById('soundEffect');
+
+        button.addEventListener('click', () => {
+            sound.currentTime = 0;
+            sound.play();
+            
+            // Visual feedback
+            button.style.animation = 'none';
+            setTimeout(() => {
+                button.style.animation = 'gradientBG 3s ease infinite';
+            }, 10);
+        });
+    </script>
 </html>
