@@ -38,18 +38,38 @@
     </style>
   <head>
     <style>
-.button {
-  background-color: #04AA6D; /* Green */
-  border: 98px;
-  color: white;
-  padding: 28px 404px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 98px;
+ .button {
+            background: linear-gradient(45deg, #04AA6D, #0fd850, #04AA6D);
+            background-size: 200% 200%;
+            border: none;
+            color: white;
+            padding: 28px 404px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 98px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: gradientBG 3s ease infinite;
+        }
+
+        .button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
   </head>
   <button class="button">Das beste Knopf der Welt</button>
